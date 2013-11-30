@@ -1,0 +1,29 @@
+/* 
+    Document   : styles.css
+    Created on : 1-dec-2013, 0:19:21
+    Author     : Yassine Elouazzani
+    Description: Snake game styling
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #ddd;
+}
+.wrapper {
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    top: 50%;
+    margin-top: -250px;
+}
+.game-window {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: #A8AFA7;
+    margin: 0 auto;
+}
+
