@@ -1,18 +1,13 @@
 $(document).ready(function() {
     var keyCodes= {
-        left : 37,
-        up : 38,
-        right : 39,
-        down : 40
+        37: 'left',
+        38: 'up',
+        39: 'right',
+        40: 'down'
     };
     $(document).keydown(function(e){
-        if (
-                e.keyCode == keyCodes.left ||
-                e.keyCode == keyCodes.up ||
-                e.keyCode == keyCodes.right ||
-                e.keyCode == keyCodes.down
-        ) {
-           console.log( "control key pressed" );
+        if (keyCodes[e.keyCode]) {
+           console.log( "You pressed: " + keyCodes[e.keyCode]);
            return false;
         }
     });
