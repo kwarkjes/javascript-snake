@@ -34,10 +34,8 @@ body {
 }
 .game-window span {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -5px;
-    margin-top: -5px;
+    top: 240px;
+    left: 240px;
     display: block;
     height: 10px;
     width: 10px;
