@@ -11,18 +11,17 @@ $(document).ready(function() {
         32: 'spacebar'
     };
     $(document).keydown(function(e){
-        var direction = keyCodes[e.keyCode];
-        if (direction) {
-           console.log( "You pressed: " + keyCodes[e.keyCode]);
-           if(direction === 'left' || direction === 'right') {
-                activeDirection = direction;
+        var key = keyCodes[e.keyCode];
+        if (key) {
+           if(key === 'left' || key === 'right') {
+                activeDirection = key;
                 animateSnakeShapehotizontal();
            }
-           if(direction === 'up' || direction === 'down') {
-                activeDirection = direction;
+           if(key === 'up' || key === 'down') {
+                activeDirection = key;
                 animateSnakeShapevertical();
            }
-           if (direction === 'spacebar') {
+           if (key === 'spacebar') {
                $('body').toggleClass('pause');
                snakeShape.stop();
            }
