@@ -23,6 +23,7 @@ $(document).ready(function() {
                 animateSnakeShapevertical();
            }
            if (direction === 'spacebar') {
+               $('body').toggleClass('pause');
                snakeShape.stop();
            }
            return false;
