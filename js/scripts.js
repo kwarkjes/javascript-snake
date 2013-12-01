@@ -13,17 +13,20 @@ $(document).ready(function() {
     $(document).keydown(function(e){
         var key = keyCodes[e.keyCode];
         if (key) {
-           if(key === 'left' || key === 'right') {
-                activeDirection = key;
-                animateSnakeShapehotizontal();
-           }
-           if(key === 'up' || key === 'down') {
-                activeDirection = key;
-                animateSnakeShapevertical();
-           }
            if (key === 'spacebar') {
+               if ($('body').hasClass('pause') && activeDirection !== null) {
+                    animateSnakeShape(activeDirection);
+               }else {
+                   snakeShape.stop();
+               }
                $('body').toggleClass('pause');
-               snakeShape.stop();
+           }
+           else {
+               if (!$('body').hasClass('pause')) {
+                    activeDirection = key;
+                    dump(activeDirection);
+                    animateSnakeShape(activeDirection);
+               }
            }
            return false;
         }
@@ -45,4 +48,12 @@ function animateSnakeShapevertical() {
     snakeShape.stop().animate({
         top : ((activeDirection === 'up' ? old_position.top - 10 : old_position.top + 10))+'px'
     },snakeSpeed,animateSnakeShapevertical);
+}
+function animateSnakeShape(direction) {
+    if (direction  === 'left' || direction  === 'right') {
+        animateSnakeShapehotizontal();
+    }
+    if (direction  === 'up' || direction  === 'down') {
+        animateSnakeShapevertical();
+    }
 }
